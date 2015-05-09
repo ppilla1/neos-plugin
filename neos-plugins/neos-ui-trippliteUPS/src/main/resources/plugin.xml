@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plug-in-manifest title="TrippLite UI Plug-in"
+	description="Provides UIs for TrippLite." 
+	version="1.1"
+	provider-name="Honeywell" 
+	plug-in-id="com.hon.neos.tripplite.ui"
+	plug-in-class-name="com.hon.neos.tripplite.ui.TrippLiteUIPlugin">
+
+	<!--  
+		Extension Declarations 
+	-->
+
+	<!-- Extend the VAPIX Settings View Factory Point -->
+	<extend-a-point title="TrippLite Settings"
+		description="Provides a user interface for TrippLite Settings"
+		accessor-method-name="TrippLiteSettingsViewFactory">
+		<point plug-in-id="com.hon.neos.suit" point-id="SettingsViewFactory" />
+	</extend-a-point>
+
+	<!-- REQUIRES -->
+	<requires>
+		<class-dir path="." />
+		<jar-file path="./tripLiteUI.jar" />
+		<plug-in plug-in-id="com.hon.neos.core" min-version="5.3" max-version=""/>
+		<plug-in plug-in-id="com.hon.neos.suit" min-version="5.3" max-version=""/>
+	</requires>
+
+</plug-in-manifest>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<plug-in-manifest title="TrippLite Plug-in"
+	description="Provides for SNMP control of the TrippLite UPS in NEOS." version="0.0"
+	provider-name="Honeywell" plug-in-id="com.hon.neos.tripplite"
+  	plug-in-class-name = "com.hon.neos.tripplite.TrippLitePlugin">
+
+	<!--  
+		Extension Declarations 
+	-->
+
+	<!-- AssetType -->
+  <extend-a-point title="TrippLite Asset Type"
+	description="Extends the point for TrippLite assets." 
+    accessor-method-name = "TrippLiteAssetFactory">  
+    <point plug-in-id="com.hon.neos.core.platform" point-id="AssetFactory" />
+  </extend-a-point>
+  
+   <!-- Command -->
+   <extend-a-point title="TrippLite Command"
+      description="Commands for TrippLite UPS"
+      accessor-method-name="TrippLiteCommand">
+      <point plug-in-id="com.hon.neos.core.platform" point-id="Command" />
+   </extend-a-point>
+
+<!-- Required Resources - none -->
+  <requires>
+    <class-dir path = "." />
+    <jar-file path="./trippLite.jar" />
+    <jar-file path="./lib/snmp4j-1.11.3.jar" />
+  </requires>
+
+</plug-in-manifest>
